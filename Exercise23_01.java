@@ -36,11 +36,11 @@ public class Exercise23_01 {
     //   - Place currentElement at list[k + 1]
     // ---------------------------------------------------------------
     public static <E extends Comparable<E>> void insertionSort(E[] list){
-        for (int i = 1; i < list.length - 1; i++){
+        for (int i = 1; i < list.length; i++){
             E currentElement = list[i];
             int k = i - 1;
             while (k >= 0 && list[k].compareTo(currentElement) > 0){
-                currentElement = list[k+1];
+                list[k+1] = list[k];
                 k--;
             }
             list[k + 1] = currentElement;
